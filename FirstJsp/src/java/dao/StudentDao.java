@@ -15,33 +15,65 @@ import model.Student;
 import util.DbUtil;
 
 public class StudentDao {
-  static PreparedStatement ps;
-  static ResultSet rs;
-  static String sql;
-    
+
+    static PreparedStatement ps;
+    static ResultSet rs;
+    static String sql;
+
     public static List<Student> getAllStudents() {
-      List<Student> list = new ArrayList<>();
-      
-      sql = "select * from student";
-      
-      try {
-          ps =DbUtil.getCon().prepareStatement(sql);
-          
-          rs = ps.executeQuery();
-          
-          while(rs.next()){
-              
-              Student s=new Student(rs.getInt("id"),
-                      sql,
-                      sql,
-                      sql);
-          }
-      } catch (SQLException ex) {
-          Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
-      }
-      return null;
-      // emp id, name, post, salary;
-        
+        List<Student> students = new ArrayList<>();
+
+        sql = "select * from student";
+
+        try {
+            ps = DbUtil.getCon().prepareStatement(sql);
+
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                Student s = new Student(rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("email"),
+                        rs.getString("cell"),
+                        rs.getString("subject"),
+                        rs.getString("gender")
+                );
+                students.add(s);
+
+                ps.close();
+                rs.close();
+                DbUtil.getCon().close();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return students;
+
     }
-    
+    public static int saveStudent(Student s) {
+       int status = 0;
+       
+       sql = "insert into students(name, email, cell, subject, gender) values(?,?,?,?,?)";
+       
+        try {
+            ps = DbUtil.getCon().prepareStatement(sql);
+            
+            ps.setString(1, s.getName());
+            ps.setString(2, s.getEmail());
+            ps.setString(3, s.getCell());
+            ps.setString(4, s.getSubject());
+            ps.setString(5, s.getGender());
+            
+            status= ps.executeUpdate();
+            
+            ps.close();
+            DbUtil.getCon().close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return status;
+    }
+
 }
