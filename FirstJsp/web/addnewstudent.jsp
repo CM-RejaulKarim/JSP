@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<html>
-    <head>
-        <title>Hello World</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1> 
-            
-        
-        </h1>
-    <fieldset><legend><h2>Registration Form</h2></legend>
+
+<%@include file="header.jsp" %>
+
+
+<fieldset><legend><h2>Registration Form</h2></legend>
 
         <form action="https://youtu.be/Ury6A1qbUvA?si=klPQyPymJQIm3kjF">
 
@@ -49,5 +37,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         
         
         </form></fieldset>
-    </body>
-</html>
+
+<%@include file="footer.jsp" %>
