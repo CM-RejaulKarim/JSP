@@ -3,8 +3,9 @@
 <jsp:setProperty  name="s" property="*" />
 
 <%
-int result = StudentDao.saveStudent(s);
-if(result > 0){
+int result=StudentDao.saveStudent(s);
+
+if(result>0){
     response.sendRedirect(index.jsp);
     }
     else{

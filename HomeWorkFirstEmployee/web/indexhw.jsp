@@ -1,20 +1,19 @@
-<%@include file="header.jsp" %>
+<%@include file="headerhwf.jsp" %>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="model.Student" %>
-<%@page import="dao.StudentDao" %>
+<%@page import="model.Employee" %>
+<%@page import="dao.EmpDao" %>
 <%@page import="java.util.*" %>
 
-
 <%
-List<Student> list = StudentDao.getAllStudent();
-request.setAttribute("list", list);
+List<Employee> list=EmpDao.getAllEmp();
+request.setAttribute("list",list);
 
 %>
 
 <div class="container my-3 py-2">
 
-    <h1 class="text-primary text-center">All Students</h1>
+    <h1 class="text-primary text-center">All Employees</h1>
 
 
     <table class="table table-striped mb-3">
@@ -23,10 +22,9 @@ request.setAttribute("list", list);
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Cell</th>
-                <th scope="col">Subject</th>
-                <th scope="col">Gender</th>
+                <th scope="col">Post</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Action</th>
                 
             </tr>
             
@@ -37,10 +35,8 @@ request.setAttribute("list", list);
                 <tr>
                     <td>${s.getId()}</td>
                     <td>${s.getName()}</td>
-                    <td>${s.getEmail()}</td>
-                    <td>${s.getCell()}</td>
-                    <td>${s.getSubject()}</td>
-                    <td>${s.getGender()}</td>
+                    <td>${s.getPost()}</td>
+                    <td>${s.getSalary()}</td>
                     <td>
                         
                         <button type="submit" class="btn btn-primary">Edit</button>
@@ -55,4 +51,7 @@ request.setAttribute("list", list);
 </div>
 
 
-<%@include file="footer.jsp" %>
+
+
+
+<%@include file="footerhwf.jsp" %>

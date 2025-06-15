@@ -20,7 +20,7 @@ public class StudentDao {
     static ResultSet rs;
     static String sql;
 
-    public static List<Student> getAllStudents() {
+    public static List<Student> getAllStudent() {
         List<Student> students = new ArrayList<>();
 
         sql = "select * from student";
@@ -40,36 +40,38 @@ public class StudentDao {
                         rs.getString("gender")
                 );
                 students.add(s);
-
-                ps.close();
-                rs.close();
-                DbUtil.getCon().close();
             }
+
+            ps.close();
+            rs.close();
+            DbUtil.getCon().close();
+
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return students;
 
     }
+
     public static int saveStudent(Student s) {
-       int status = 0;
-       
-       sql = "insert into students(name, email, cell, subject, gender) values(?,?,?,?,?)";
-       
+        int status = 0;
+
+        sql = "insert into student(name, email, cell, subject, gender) values(?,?,?,?,?)";
+
         try {
             ps = DbUtil.getCon().prepareStatement(sql);
-            
+
             ps.setString(1, s.getName());
             ps.setString(2, s.getEmail());
             ps.setString(3, s.getCell());
             ps.setString(4, s.getSubject());
             ps.setString(5, s.getGender());
-            
-            status= ps.executeUpdate();
-            
+
+            status = ps.executeUpdate();
+
             ps.close();
             DbUtil.getCon().close();
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
         }

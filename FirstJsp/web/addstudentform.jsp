@@ -8,28 +8,27 @@
 
 
         <div><label for="practisebyReja" id="name"><b>Name:</b></label><br>
-            <input type="text" class="nph"><br><!-- comment -->
+            <input type="text" class="nph" id="name" name="name"><br><!-- comment -->
         </div>
 
-        <label for="practisebyReja" id="Phone">Phone:</label><br>
-        <input type="text" class="nph"><br>
-
         <label for="practisebyReja">Email:</label><br>
-        <input type="email" class="nph"><br>
+        <input type="email" class="nph" id="email" name="email"><br>
+        
+        <label for="practisebyReja" id="Phone">Cell:</label><br>
+        <input type="text" class="nph" id="cell" name="cell"><br>
 
         <label for="practisebyReja"><b>Gender:</b></label><br>
-        <input type="radio" name="Gender">Male <br>
-        <input type="radio" name="Gender">Female <br>
-        <input type="radio" name="Gender">Others <br><br>
+        <input type="radio" name="Gender" value="male">Male <br>
+        <input type="radio" name="Gender" value="female">Female <br>
 
         <label for="practisebyReja">Subject:</label><br>
         <select name="practisebyReja" id="Subject">
             <option value="">--Select One--</option>
-            <option value="" id="jee">jee</option>
-            <option value="" id="css">css</option>
-            <option value="" id="html">html</option>
-            <option value="" id="js">js</option>
-            <option value="" id="db">db</option>
+            <option value="jee" id="jee">jee</option>
+            <option value="css" id="css">css</option>
+            <option value="html" id="html">html</option>
+            <option value="js" id="js">js</option>
+            <option value="db" id="db">db</option>
         </select><br>
 
 
