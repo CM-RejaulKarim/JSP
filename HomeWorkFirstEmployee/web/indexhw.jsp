@@ -31,16 +31,16 @@ request.setAttribute("list",list);
         </thead>
         <tbody>
             
-            <c:forEach items="${list}" var="s">
+            <c:forEach items="${list}" var="e">
                 <tr>
-                    <td>${s.getId()}</td>
-                    <td>${s.getName()}</td>
-                    <td>${s.getPost()}</td>
-                    <td>${s.getSalary()}</td>
+                    <td>${e.getId()}</td>
+                    <td>${e.getName()}</td>
+                    <td>${e.getPost()}</td>
+                    <td>${e.getSalary()}</td>
                     <td>
-                        
-                        <button type="submit" class="btn btn-primary">Edit</button>
-                        <button type="submit" class="btn btn-warning">Delete</button>
+                        <a href="editempform.jsp?id=${e.id}" class="btn btn-primary" >Edit</a>
+                        <a href="deleteemp.jsp?id=${e.id}" class="btn btn-warning" 
+                           onclick="return confirm('Are You Sure Want To Delete This Employee?');">Delete</a>
                     </td>
                 </tr>
                 

@@ -134,7 +134,7 @@ public class StudentDao {
     public static int updateStudent(Student s) {
         int status = 0;
 
-        sql = "update student name=?, email=?, cell=?, subject=?, gender=? where id =?";
+        sql = "update student set name=?, email=?, cell=?, subject=?, gender=? where id =?";
 
         try {
             ps = DbUtil.getCon().prepareStatement(sql);

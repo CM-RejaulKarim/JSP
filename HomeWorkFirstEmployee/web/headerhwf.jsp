@@ -20,7 +20,7 @@
                             <a class="nav-link active" aria-current="page" href="indexhw.jsp">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="addempform.jsp">Add New Employee</a>
+                            <a class="nav-link active" href="addempform.jsp">Add New Employee</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Pricing</a>

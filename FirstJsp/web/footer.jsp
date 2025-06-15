@@ -8,7 +8,7 @@
             </a> 
             <span class="mb-3 mb-md-0 text-body-secondary justify-content-center">© CM REJAUL KARIM</span> 
         </div> 
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex"> 
+<!--        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex"> 
             <li class="ms-3">
                 <a class="text-body-secondary" href="#" aria-label="Instagram">
                     <svg class="bi" width="24" height="24" aria-hidden="true">
@@ -23,7 +23,7 @@
                     </svg>
                 </a>
             </li> 
-        </ul> 
+        </ul> -->
     </footer> 
 </div>
 

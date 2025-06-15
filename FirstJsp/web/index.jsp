@@ -27,6 +27,7 @@ request.setAttribute("list", list);
                 <th scope="col">Cell</th>
                 <th scope="col">Subject</th>
                 <th scope="col">Gender</th>
+                <th scope="col">Action</th>
                 
             </tr>
             
@@ -43,8 +44,9 @@ request.setAttribute("list", list);
                     <td>${s.getGender()}</td>
                     <td>
                         
-                        <button type="submit" class="btn btn-primary">Edit</button>
-                        <button type="submit" class="btn btn-warning">Delete</button>
+                        <a href="editstudentform.jsp?id=${s.id}" class="btn btn-primary">Edit</a>
+                        <a href="deleteStudent.jsp?id=${s.id}" class="btn btn-warning"
+                           onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
                     </td>
                 </tr>
                 

@@ -1,17 +1,15 @@
-<%-- 
-    Document   : editstudent
-    Created on : Jun 15, 2025, 7:08:43 PM
-    Author     : Admin
---%>
+<jsp:useBean class="model.Student"  id="s" />
+<%@page  import="dao.StudentDao" %>
+<jsp:setProperty  name="s" property="*" />
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%
+int result=StudentDao.updateStudent(s);
+
+if(result>0){
+    response.sendRedirect("success.jsp");
+    }
+    else{
+    response.sendRedirect("error.jsp");
+    }
+
+%>

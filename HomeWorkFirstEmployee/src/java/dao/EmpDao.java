@@ -45,34 +45,108 @@ public class EmpDao {
 
         return employees;
     }
-    
+
     public static int addEmp(Employee e) {
-        int status=0;
-        
-        sql ="insert into emp(name, post, salary) values(?,?,?)";
-        
+        int status = 0;
+
+        sql = "insert into emp(name, post, salary) values(?,?,?)";
+
         try {
-            ps =DbUtil.getCon().prepareStatement(sql);
-            
+            ps = DbUtil.getCon().prepareStatement(sql);
+
             ps.setString(1, e.getName());
             ps.setString(2, e.getPost());
             ps.setFloat(3, e.getSalary());
-            
-            status =ps.executeUpdate();
-            
+
+            status = ps.executeUpdate();
+
             System.out.println(status);
-            
+
             ps.close();
             DbUtil.getCon().close();
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(EmpDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
-        
+
         return status;
+    }
+
+    public static void deleteEmp(int id) {
+        sql = "delete from emp where id=?";
+
+        try {
+            ps = DbUtil.getCon().prepareStatement(sql);
+
+            ps.setInt(1, id);
+
+            ps.executeUpdate();
+
+            ps.close();
+            DbUtil.getCon().close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public static Employee getEmpById(int id) {
+        Employee e = null;
+
+        sql = "select * from emp where id =?";
+
+        try {
+            ps = DbUtil.getCon().prepareStatement(sql);
+
+            ps.setInt(1, id);
+
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+            e = new Employee(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("post"),
+                        rs.getFloat("salary")
+                );
+            
+            }
+
+            rs.close();
+            ps.close();
+            DbUtil.getCon().close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return e;
+    }
+    
+    public static int editEmp(Employee e) {
+        int statuse = 0;
+
+        sql = "update emp set name=?, post=?, salary=? where id =?";
+
+        try {
+            ps = DbUtil.getCon().prepareStatement(sql);
+
+            ps.setString(1, e.getName());
+            ps.setString(2, e.getPost());
+            ps.setFloat(3, e.getSalary());
+            ps.setInt(4, e.getId());
+
+            statuse = ps.executeUpdate();
+
+            ps.close();
+            DbUtil.getCon().close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return statuse;
     }
 
 }
