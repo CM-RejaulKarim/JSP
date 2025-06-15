@@ -14,8 +14,15 @@
                     <hr class="vr h-100">
                 </div>
                 <div class="col-md-5">
-                    <label class="form-label">Post <small class="text-danger">*</small></label>
-                    <input type="text" class="form-control" id="post" name="post" required>
+                    <label class="form-label">Post <small class="text-danger">*</small></label> <br>                   
+                    <select name="subject" id="Subject" required>
+                        <option value="">--Select One--</option>
+                        <option value="jee" id="jee">Manager</option>
+                        <option value="css" id="css">Asst. Manager</option>
+                        <option value="html" id="html">Senior Employee</option>
+                        <option value="js" id="js">Employee</option>
+                        <option value="db" id="db">Operator</option>
+                    </select>
                 </div>
             </div> <!-- first row start -->
             <!-- second row -->
@@ -28,15 +35,16 @@
                     <hr class="vr h-100">
                 </div>
                 <div class="col-md-5">
-<!--                    <label class="form-label">Password </label>
-                    <input type="password" class="form-control" placeholder="********">-->
+                    <!--                    <label class="form-label">Password </label>
+                                        <input type="password" class="form-control" placeholder="********">-->
+                    <input type="submit" value="save" class="btn btn-primary mt-3">
                 </div>
             </div><!-- second row -->
-            
-            
 
 
-            <input type="submit" value="save" class="btn btn-primary mt-3">
+
+
+            
         </form>
     </div>
 </fieldset>

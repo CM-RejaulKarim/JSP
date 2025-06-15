@@ -6,10 +6,10 @@
 int result=EmpDao.addEmp(e);
 
     if(result>0){
-    response.sendRedirect("indexhw.jsp?msg=success");
+    response.sendRedirect("success.jsp?msg=success");
     }
     else{
-    response.sendRedirect("indexhw.jsp?msg=failure");
+    response.sendRedirect("error.jsp?msg=failure");
     }
 
 %>

@@ -1,5 +1,2 @@
-
-
 <h3 class="text-center text-danger mt-4">Student not saved</h3> 
-<%@include file="addstudentform.jsp" %>
-
+<%@include file="addempform.jsp" %>

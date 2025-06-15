@@ -2,9 +2,12 @@
 <%@include file="header.jsp" %>
 
 
-<fieldset><legend><h2>Registration Form</h2></legend>
+<fieldset >
 
-    <form action="addstudent.jsp" method="post">
+    <div class="container">
+        <legend><h2>Registration Form</h2></legend>
+        
+        <form action="addstudent.jsp" method="post">
 
 
         <div><label for="practisebyReja" id="name"><b>Name:</b></label><br>
@@ -18,11 +21,11 @@
         <input type="text" class="nph" id="cell" name="cell"><br>
 
         <label for="practisebyReja"><b>Gender:</b></label><br>
-        <input type="radio" name="Gender" value="male">Male <br>
-        <input type="radio" name="Gender" value="female">Female <br>
+        <input type="radio" name="gender" value="male">Male <br>
+        <input type="radio" name="gender" value="female">Female <br>
 
         <label for="practisebyReja">Subject:</label><br>
-        <select name="practisebyReja" id="Subject">
+        <select name="subject" id="Subject">
             <option value="">--Select One--</option>
             <option value="jee" id="jee">jee</option>
             <option value="css" id="css">css</option>
@@ -36,6 +39,8 @@
         <button type="reset" class="btn btn-warning">Reset</button>
 
 
-    </form></fieldset>
+    </form>
+    </div>
+    </fieldset>
 
 <%@include file="footer.jsp" %>
