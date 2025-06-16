@@ -14,7 +14,7 @@ request.setAttribute("list", list);
 
 <div class="container my-3 py-2">
 
-    <h1 class="text-primary text-center">All Students</h1>
+    <h1 class="text-success text-center fst-italic">All Students</h1>
 
 
     <table class="table table-striped mb-3">

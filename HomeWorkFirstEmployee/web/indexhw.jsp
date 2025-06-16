@@ -13,7 +13,7 @@ request.setAttribute("list",list);
 
 <div class="container my-3 py-2">
 
-    <h1 class="text-primary text-center">All Employees</h1>
+    <h1 class="text-success text-center">All Employees</h1>
 
 
     <table class="table table-striped mb-3">

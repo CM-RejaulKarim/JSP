@@ -125,7 +125,7 @@ public class EmpDao {
     }
     
     public static int editEmp(Employee e) {
-        int statuse = 0;
+        int status = 0;
 
         sql = "update emp set name=?, post=?, salary=? where id =?";
 
@@ -137,7 +137,7 @@ public class EmpDao {
             ps.setFloat(3, e.getSalary());
             ps.setInt(4, e.getId());
 
-            statuse = ps.executeUpdate();
+            status = ps.executeUpdate();
 
             ps.close();
             DbUtil.getCon().close();
@@ -146,7 +146,7 @@ public class EmpDao {
             Logger.getLogger(EmpDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return statuse;
+        return status;
     }
 
 }
