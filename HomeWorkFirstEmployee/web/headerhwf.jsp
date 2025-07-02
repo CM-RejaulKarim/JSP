@@ -20,7 +20,13 @@
                             <a class="nav-link active" aria-current="page" href="indexhw.jsp">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link active" href="allempserv.jsp">All Employee using servelet</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active" href="addempform.jsp">Add New Employee</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="addempserv.jsp">Add New Employee using servelet</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Pricing</a>

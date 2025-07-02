@@ -13,7 +13,7 @@ request.setAttribute("list",list);
 
 <div class="container my-3 py-2">
 
-    <h1 class="text-success text-center">All Employees from jsp</h1>
+    <h1 class="text-success text-center">All Employees From Servelet</h1>
 
 
     <table class="table table-striped mb-3">
@@ -38,8 +38,8 @@ request.setAttribute("list",list);
                     <td>${e.getPost()}</td>
                     <td>${e.getSalary()}</td>
                     <td>
-                        <a href="editempform.jsp?id=${e.id}" class="btn btn-primary" >Edit</a>
-                        <a href="deleteemp.jsp?id=${e.id}" class="btn btn-warning" 
+                        <a href="empServelet?action=edit&id=${e.id}" class="btn btn-primary" >Edit</a>
+                        <a href="empServelet?action=delete&id=${e.id}" class="btn btn-warning" 
                            onclick="return confirm('Are You Sure Want To Delete This Employee?');">Delete</a>
                     </td>
                 </tr>
