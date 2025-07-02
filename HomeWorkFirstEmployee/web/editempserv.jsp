@@ -5,15 +5,15 @@
 
 
 <%
-    Employee e = (Employee) request.getAttribute("employee");
+    Employee e = (Employee) request.getAttribute("e");
 %>
 
 
 
 <fieldset class="bg-success text-warning"><legend class="container">Registration Form</legend>
     <div class="container">
-        <form action="empservelet" method="post">
-            <input type="hidden" name="id" value="<%=e.getId()%>" />
+        <form action="empServelet" method="post">
+            <input type="hidden" name="id" value="<%= e.getId() %>" />
 
             <!-- first row start -->
             <div class="row mb-3">

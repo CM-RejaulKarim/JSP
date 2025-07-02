@@ -37,8 +37,7 @@ public class EmpServlet extends HttpServlet {
             EmpDao.addEmp(emp);
 
             resp.sendRedirect("allempserv.jsp");
-            
-            
+
         } else if ("edit".equals(action)) {
             Employee emp = new Employee();
 
@@ -46,8 +45,6 @@ public class EmpServlet extends HttpServlet {
             emp.setPost(req.getParameter("post"));
             emp.setSalary(Float.parseFloat(req.getParameter("salary")));
             emp.setId(Integer.parseInt(req.getParameter("id")));
-
-            System.out.println("Name " + emp.getName());
 
             EmpDao.editEmp(emp);
 
@@ -60,18 +57,16 @@ public class EmpServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String action = req.getParameter("action");
-        
+
         if ("delete".equals(action)) {
             EmpDao.deleteEmp(Integer.parseInt(req.getParameter("id")));
             resp.sendRedirect("allempserv.jsp");
-            
-        }
-        else if ("edit".equals(action)) {
-            EmpDao.deleteEmp(Integer.parseInt(req.getParameter("id")));
-            
-            Employee e =EmpDao.getEmpById(Integer.parseInt(req.getParameter("id")));
-            req.setAttribute("emp", e);
-            
+
+        } else if ("edit".equals(action)) {
+
+            Employee e = EmpDao.getEmpById(Integer.parseInt(req.getParameter("id")));
+            req.setAttribute("e", e);
+
             req.getRequestDispatcher("editempserv.jsp").forward(req, resp);
         }
     }
