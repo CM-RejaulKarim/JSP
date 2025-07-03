@@ -1,12 +1,14 @@
-<%@include file="headerhwf.jsp" %>
+<%@include file="header.jsp" %>
+
+
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="model.Employee" %>
+<%@page import="model.Emp" %>
 <%@page import="dao.EmpDao" %>
 <%@page import="java.util.*" %>
 
 <%
-List<Employee> list=EmpDao.getAllEmp();
+List<Emp> list=EmpDao.getAllEmp();
 request.setAttribute("list",list);
 
 %>
@@ -53,5 +55,4 @@ request.setAttribute("list",list);
 
 
 
-
-<%@include file="footerhwf.jsp" %>
+<%@include file="footer.jsp" %>
